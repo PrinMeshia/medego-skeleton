@@ -17,24 +17,24 @@ func initApplication() *application {
 	}
 
 	//init medego
-	cel := &medego.Medego{}
-	err = cel.New(path)
+	core := &medego.Medego{}
+	err = core.New(path)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	cel.AppName = "MyApp"
+	core.AppName = "MyApp"
 
 	myMiddleware := &middleware.Middleware{
-		App: cel,
+		App: core,
 	}
 
 	myHandler := &handlers.Handlers{
-		App: cel,
+		App: core,
 	}
 
 	app := &application{
-		App:        cel,
+		App:        core,
 		Middleware: myMiddleware,
 		Handlers:   myHandler,
 	}

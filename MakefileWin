@@ -8,13 +8,13 @@ build:
 
 run: build
 	@echo Starting MedeGo...
-	@.\tmp\${BINARY_NAME} &
+	@start /min cmd /c tmp\${BINARY_NAME} &
 	@echo MedeGo started!
 
 clean:
 	@echo Cleaning...
+	@DEL .\tmp\${BINARY_NAME}
 	@go clean
-	@del .\tmp\${BINARY_NAME}
 	@echo Cleaned!
 
 test:
