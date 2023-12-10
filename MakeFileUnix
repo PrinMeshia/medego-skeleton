@@ -1,4 +1,4 @@
-BINARY_NAME=celeritasApp
+BINARY_NAME=MedeGoApp
 
 build:
 	@go mod vendor
